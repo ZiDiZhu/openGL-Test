@@ -246,14 +246,14 @@ int main(int argc, char*argv[])
         {
             isColoredMode = true;
         }
-        else {
-            isColoredMode = false;
+        else if (glfwGetKey(window, GLFW_KEY_T) == GLFW_RELEASE) {
+            isColoredMode = false;  // Toggle the boolean value
         }
 
         if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) {
-            flipTriangle = true;  // Toggle the boolean value
-        }else if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_RELEASE) {
             flipTriangle = false;  // Toggle the boolean value
+        }else if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_RELEASE) {
+            flipTriangle = true;  // Toggle the boolean value
         }
 
         glUseProgram(shaderProgram);
